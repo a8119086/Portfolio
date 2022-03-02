@@ -12,6 +12,7 @@ body,p{
 p {
     color: #000;
     line-height: 2.5;
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 }
  
 /* header */
@@ -20,9 +21,11 @@ header{
     padding: 0;
     display: flex;
     justify-content: space-between;
-    background-color: #DFDFDF;
+    background-color: #ffffff;
     position: fixed;
     width: 100%;
+    border-bottom: thick double  #000;
+    z-index: 10000;
 }
 header h1{
     margin-left: 30px;
@@ -35,15 +38,22 @@ nav ul{
     list-style-type: none;
 }
 nav ul li{
-    margin:auto 30px;
+    margin:auto 20px;
 }
 nav ul li a{
     font-size: 18px;
-    color: #ffffff;
+    color: #000;
     text-decoration: none;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
 }
 nav ul li a:hover{
-    color: #000;
+    color: #DFDFDF;
+}
+nav ul li img{
+    width: 52px;
 }
 /* main */
 main{
@@ -55,15 +65,37 @@ main{
     text-align: center;
 }
 .visual img{
-    margin: 50px auto;
+    margin: 100px auto;
     width: 50%;
 }
+.fadeUp{
+animation-name:fadeUpAnime;
+animation-duration:2s;
+animation-fill-mode:forwards;
+opacity:0;
+}
 
+@keyframes fadeUpAnime{
+  from {
+    opacity: 0;
+  transform: translateY(50px);
+  }
+
+  to {
+    opacity: 1;
+  transform: translateY(100);
+  }
+}
 main section{
     width: 700px;
-    margin: 100px auto;
+    margin: 150px auto;
     text-align: center;
     height: 100%;
+}
+section img{
+    width: 200px;
+    margin-top: 50px;
+    margin-bottom: 20px;
 }
 main .contents h2{
     font-size: 32px;
@@ -73,6 +105,7 @@ main .contents h2{
 }
 main .contents dl{
     width: 700px;
+    margin-top: 50px;
 }
 main dl dt{
     float: left;
@@ -90,6 +123,10 @@ main .viewmore{
     margin: 20px auto;
     
 }
+main .viewmore a::after{
+    content: ">";
+    margin: 0 10px;
+}
 main .viewmore a{
     text-align: center;
     color: #ffffff;
@@ -98,6 +135,10 @@ main .viewmore a{
     display: block;
     text-decoration: none;
     border: solid 1px #000;
+    -webkit-transition: all 0.3s ease;
+    -moz-transition: all 0.3s ease;
+    -o-transition: all 0.3s ease;
+    transition: all  0.3s ease;
 }
 main .viewmore a:hover{
     color: #000;
@@ -105,11 +146,13 @@ main .viewmore a:hover{
     
 }
 /* footer */
-footer p{
-    text-align: center;
+footer{
     background-color: #DFDFDF;
     height: 100px;
-    line-height: 100px;
+    padding: 20px 0 0 0;
+}
+footer p,small{
+    text-align: center;
     color: #ffffff;
 }
 
@@ -121,6 +164,15 @@ main .title{
 }
 main .title h1{
     margin-top: 100px;
+}
+.about_img{
+    width: 100%;
+    margin: 150px auto;
+    text-align: center;
+}
+.about_img img{
+    width: 200px;
+
 }
 .about_block{
     display: flex;
@@ -136,7 +188,10 @@ main .title h1{
 }
 
 /* WORKS */
-
+.works img{
+    width: 200px;
+    margin: 150px auto;
+}
 #text-wrap {
     width: 100%;
     height: 100%;
@@ -209,7 +264,10 @@ button.readmore:hover::after {
     width: 330px;
 }
 /* design */
-
+.design img{
+    width: 200px;
+    margin: 150px auto;
+}
 .design_text{
     line-height: 1.6;
 }
