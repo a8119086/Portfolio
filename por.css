@@ -1,4 +1,7 @@
 @charset "UTF-8";
+/* *{
+cursor: url(image/cursor.png),auto;
+} */
 body{
     line-height: 1;
     font-size: 16px;
